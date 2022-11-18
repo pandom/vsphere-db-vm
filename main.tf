@@ -23,7 +23,7 @@ module "vault" {
 module "secrets-database" {
   source  = "app.terraform.io/burkey/secrets-database/vault"
   version = "0.0.1"
-  database_name = "${var.project_id}-postgresql"
+  database_name = "postgres"
   database_server_address =  module.vault[0].virtual_machine_ip
   project_id = var.project_id
   ssl_mode = false
