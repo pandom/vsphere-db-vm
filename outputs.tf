@@ -1,4 +1,4 @@
 
 output "vmip" {
-  value = module.vault[0].vsphere_virtual_machine.default_ip_address
+  value = module.vault[0].vsphere_virtual_machine.virtual_machine_ip
 }
