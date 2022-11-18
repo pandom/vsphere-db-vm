@@ -1,6 +1,3 @@
-data "vsphere_datacenter" "dc" {
-  name = local.vsphere_data.datacenter
-}
 module "vault" {
   source  = "app.terraform.io/burkey/virtual-machine/vsphere"
   version = "1.1.4"

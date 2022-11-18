@@ -1,20 +1,28 @@
 
 terraform {
-  cloud {
-    organization = "burkey"
+  # cloud {
+  #   organization = "burkey"
 
-    workspaces {
-      name = "4-vsphere-db-vm"
-    }
-  }
+  #   workspaces {
+  #     name = "4-vsphere-db-vm"
+  #   }
+  # }
   required_providers {
 
     vsphere = {
       source  = "registry.terraform.io/hashicorp/vsphere"
       version = "2.2.0"
     }
+    vault = {
+      source = "registry.terraform.io/hashicorp/vault"
+      version = "3.11.0"
+    }
 
   }
+}
+
+provider "vault"{
+  skip_tls_verify = true
 }
 
 provider "vsphere" {
