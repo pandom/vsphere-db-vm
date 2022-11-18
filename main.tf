@@ -19,7 +19,7 @@ module "vault" {
 ## Creates Vault DB secrets engine.
 module "secrets-database" {
   source  = "app.terraform.io/burkey/secrets-database/vault"
-  version = "0.0.2"
+  version = "0.0.3"
   database_name = "${var.project_id}-postgresql"
   database_server_address =  module.vault[0].virtual_machine_ip
   project_id = var.project_id
