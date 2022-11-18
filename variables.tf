@@ -12,6 +12,10 @@ variable "count_index" {
   default = 1
 }
 
+variable "project_id" {
+  type = string
+  default = "burkey"
+}
 variable "tfc_networks_workspace_name" {
   default     = "tf-vsphere-nsx-quickstart-nocode"
   description = "name of nocode workspace"

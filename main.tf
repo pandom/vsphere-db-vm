@@ -26,5 +26,5 @@ module "secrets-database" {
   database_name = "${var.project_id}-postgresql"
   database_server_address =  module.vault[0].virtual_machine_ip
   project_id = var.project_id
-  ssl_mode = false
+  ssl_mode = "disabled"
 }
