@@ -52,4 +52,5 @@ variable "credential_store_id" {
 variable "app_name" {
   type = string
   description = "Boundary App Name"
+  default = "database"
 }
