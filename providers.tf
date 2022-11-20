@@ -17,7 +17,7 @@ terraform {
       source = "registry.terraform.io/hashicorp/vault"
       version = "3.11.0"
     }
-    boundary {
+    boundary = {
       source = "registry.terraform.io/hashicorp/boundary"
       version = "~>1"
     }
