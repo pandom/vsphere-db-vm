@@ -38,3 +38,13 @@ variable "vsphere_data" {
   }
 
 }
+
+variable "scope_id" {
+  type = string
+  description = "Boundary Scope"
+}
+
+variable "credential_store_id" {
+  type = string
+  description = "Boundary Credential Store"
+}
