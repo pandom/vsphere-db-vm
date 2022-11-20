@@ -17,6 +17,10 @@ terraform {
       source = "registry.terraform.io/hashicorp/vault"
       version = "3.11.0"
     }
+    boundary {
+      source = "registry.terraform.io/hashicorp/boundary"
+      version = "~>1"
+    }
 
   }
 }
@@ -28,6 +32,9 @@ provider "vault"{
 provider "vsphere" {
   #vsphere_server = var.vsphere_server
   # Configuration options
+}
+provider "boundary" {
+ 
 }
 
 locals {
