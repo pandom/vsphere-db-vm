@@ -34,7 +34,7 @@ provider "vsphere" {
   # Configuration options
 }
 provider "boundary" {
- 
+ addr = "https://6e26f70b-1a23-485a-8f30-48450d8b0ef3.boundary.hashicorp.cloud"
 }
 
 locals {
