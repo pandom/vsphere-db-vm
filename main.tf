@@ -31,6 +31,7 @@ module "target" {
   source  = "app.terraform.io/burkey/target/boundary"
   version = "0.0.1"
   credential_store_id = var.credential_store_id
+  app_name = "test" #var.app_name
   scope_id = var.scope_id
   project_id = var.project_id
   read_only_path = module.secrets-database.credential_path

@@ -48,3 +48,8 @@ variable "credential_store_id" {
   type = string
   description = "Boundary Credential Store"
 }
+
+variable "app_name" {
+  type = string
+  description = "Boundary App Name"
+}
