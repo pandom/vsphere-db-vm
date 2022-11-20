@@ -35,6 +35,9 @@ provider "vsphere" {
 }
 provider "boundary" {
  addr = "https://6e26f70b-1a23-485a-8f30-48450d8b0ef3.boundary.hashicorp.cloud"
+ auth_method_id = "ampw_7HBv1E399l"
+ password_auth_method_login_name = var.boundary_username
+ password_auth_method_password = var.boundary_password
 }
 
 locals {

@@ -54,3 +54,11 @@ variable "app_name" {
   description = "Boundary App Name"
   default = "database"
 }
+
+variable "boundary_username" {
+  type = string
+}
+
+variable "boundary_password" {
+  type = string
+}
