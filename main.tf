@@ -17,24 +17,24 @@ module "vault" {
 
 }
 ## Creates Vault DB secrets engine.
-module "secrets-database" {
-  source  = "app.terraform.io/burkey/secrets-database/vault"
-  version = "0.0.3"
-  database_name = "postgres"
-  database_server_address =  module.vault[0].virtual_machine_ip
-  project_id = var.project_id
+# module "secrets-database" {
+#   source  = "app.terraform.io/burkey/secrets-database/vault"
+#   version = "0.0.3"
+#   database_name = "postgres"
+#   database_server_address =  module.vault[0].virtual_machine_ip
+#   project_id = var.project_id
 
-}
+# }
 
-## Grabs Boundary target for authentication
-module "target" {
-  source  = "app.terraform.io/burkey/target/boundary"
-  version = "0.0.1"
-  credential_store_id = var.credential_store_id
-  app_name = var.app_name
-  scope_id = var.scope_id
-  project_id = var.project_id
-  read_only_path = module.secrets-database.credential_path
-  target_address = module.vault[0].virtual_machine_ip
-  target_port = "5432"
-}
+# ## Grabs Boundary target for authentication
+# module "target" {
+#   source  = "app.terraform.io/burkey/target/boundary"
+#   version = "0.0.1"
+#   credential_store_id = var.credential_store_id
+#   app_name = var.app_name
+#   scope_id = var.scope_id
+#   project_id = var.project_id
+#   read_only_path = module.secrets-database.credential_path
+#   target_address = module.vault[0].virtual_machine_ip
+#   target_port = "5432"
+# }
