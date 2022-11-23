@@ -1,11 +1,17 @@
-# vSphere Database as a Service VM
+# vSphere Database as a Service
+
+## Table of Contents
+1. [Deploy a VM with Terraform](https://github.com/pandom/vsphere-vm-cli)
+2. [Migrate workflow to Terraform Cloud](https://github.com/pandom/vsphere-vm-cli-ent)
+3. [Deploy VM with a Terraform Module](https://github.com/pandom/vsphere-vm-module)
+4. [Database as a Service](https://github.com/pandom/vsphere-db-vm) <- You are here
 
 This repository will deploy the following topology
 
+!insert topology here
 
 
-
-## As a guided demo
+## Purpose
 
 The purpose of this demo is to deploy a DB VM and iteratively demonstrate the plug and play nature of modules and workflows that derive an outcome. In this example the outcome here demonstrates:
 
@@ -114,4 +120,28 @@ bt[2111-postgres target]
 
 end
 end
+```
+test
+
+```mermaid
+graph LR
+dev{Developer}-->tfca
+subgraph k8s[k8s]
+subgraph pods
+p1[pod1]
+p2[pod2]
+p3[pod3]
+end
+end
+v[Vault]
+subgraph tfcap[tfc agent pool]
+tfca[Terraform Agent] 
+tfca--->|authenticates to vault|v
+v--->|retrieves k8s cred|tfca
+end
+tfca-.-dtk(Deploy to Kubernetes)
+dtk-.-p1
+dtk-.-p2
+dtk-.-p3
+
 ```
